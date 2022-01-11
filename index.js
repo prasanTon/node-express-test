@@ -2,22 +2,11 @@
 const express = require('express')
 const app = express()
 
-//create routing 
-app.get('/',(req,res) => {
-    res.send('<h1> Hello Express </h1>')
-})
-//api pass parameter 
-app.get('/api/user/:id',(req,res) => {
-    res.send(`Hello User id: ${req.params.id}`)
-})
+//import router from router  
+const urlRouter = require('./routes/url')
+//call and use router  
+app.use('',urlRouter)
 
-
-
-//api json format for test 
-app.post('/api',(req,res) => {
-    //res.send('POST API')
-    res.json({name:'prasan',email:'prasan@suvitech.com'})
-})
 
 
 
